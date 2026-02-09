@@ -2,17 +2,22 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
+// Inter para corpo de texto
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
+// JetBrains Mono para código
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: "swap",
 });
+
+// Perpetua Titling MT está configurada em globals.css via @font-face
+// Fallback para serif se não estiver instalada no sistema
 
 export const metadata: Metadata = {
   title: "Humano Saúde - Broker OS",
