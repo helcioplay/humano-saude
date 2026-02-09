@@ -15,31 +15,34 @@ export default function DashboardLayout({
 
   return (
     <div className="relative min-h-screen bg-[#050505] text-gray-100">
-      {/* Background Effects - Black Piano Premium com Gradiente Humano Saúde */}
+      {/* Background Effects - Black Piano Premium com Gold Premium */}
       <div className="pointer-events-none fixed inset-0 z-0">
         {/* Gradiente Radial de Profundidade */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#0a0a0a_0%,_#050505_50%,_#000000_100%)]" />
         
-        {/* Grid Sutil Azul/Ciano com Opacidade 0.02 - Cores da Marca */}
+        {/* Grid Sutil Dourado com Opacidade 0.02 - Luxo/Private Banking */}
         <div 
           className="absolute inset-0" 
           style={{
             backgroundImage: `
-              linear-gradient(to right, rgba(0, 163, 224, 0.02) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(0, 102, 204, 0.02) 1px, transparent 1px)
+              linear-gradient(to right, rgba(212, 175, 55, 0.02) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(170, 138, 46, 0.02) 1px, transparent 1px)
             `,
             backgroundSize: '40px 40px'
           }}
         />
         
-        {/* Aurora Effect - Azul Humano Saúde */}
-        <div className="absolute left-1/4 top-0 h-[500px] w-[500px] bg-[#0066CC]/10 blur-[120px]" />
+        {/* Aurora Effect - Dourado Real (#D4AF37) */}
+        <div className="absolute left-1/4 top-0 h-[500px] w-[500px] bg-[#D4AF37]/10 blur-[120px]" />
         
-        {/* Aurora Effect - Ciano Humano Saúde */}
-        <div className="absolute bottom-0 right-1/4 h-[500px] w-[500px] bg-[#00A3E0]/10 blur-[120px]" />
+        {/* Aurora Effect - Dourado Claro (#F6E05E) */}
+        <div className="absolute bottom-0 right-1/4 h-[500px] w-[500px] bg-[#F6E05E]/10 blur-[120px]" />
         
-        {/* Aurora Effect - Branco sutil */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] bg-white/3 blur-[100px]" />
+        {/* Aurora Effect - Branco sutil com toque dourado */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] bg-gradient-to-br from-white/5 to-[#D4AF37]/5 blur-[100px]" />
+        
+        {/* Shimmer Effect - Brilho dourado sutil */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#D4AF37]/20 to-transparent" />
       </div>
 
       {/* Desktop Sidebar */}
