@@ -30,15 +30,29 @@ export default function LandingPage() {
     <>
       <Header />
       <main>
-        <Hero />
+        <div id="hero">
+          <Hero />
+        </div>
         <Partners />
-        <CalculatorWizard />
+        <div id="calculadora">
+          <CalculatorWizard />
+        </div>
         <HowItWorks />
-        <AISimulator />
-        <CaseStudies />
-        <Triade />
-        <Testimonials />
-        <FAQ />
+        <div id="ia-simulator">
+          <AISimulator />
+        </div>
+        <div id="case-studies">
+          <CaseStudies />
+        </div>
+        <div id="triade">
+          <Triade />
+        </div>
+        <div id="testimonials">
+          <Testimonials />
+        </div>
+        <div id="faq">
+          <FAQ />
+        </div>
       </main>
       <Footer />
       <WhatsAppFloat />

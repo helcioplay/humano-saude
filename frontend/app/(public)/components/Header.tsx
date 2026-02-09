@@ -16,6 +16,25 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -120; // Compensa a altura do header fixo
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
+  const menuItems = [
+    { label: 'Tecnologia IA', section: 'ia-simulator' },
+    { label: 'Calculadora', section: 'calculadora' },
+    { label: 'Resultados', section: 'case-studies' },
+    { label: 'Método', section: 'triade' },
+    { label: 'Depoimentos', section: 'testimonials' },
+    { label: 'FAQ', section: 'faq' },
+  ];
+
   return (
     <>
       {/* ✅ Banner Dourado Fixo */}
@@ -47,7 +66,10 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-5 flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="relative">
+          <button 
+            onClick={() => scrollToSection('hero')}
+            className="relative cursor-pointer"
+          >
             <Image
               src="https://humanosaude.com.br/wp-content/uploads/2026/02/logo-humano-saude-dourado.png"
               alt="Humano Saúde"
@@ -56,25 +78,19 @@ export default function Header() {
               className="h-12 lg:h-16 w-auto brightness-0 invert"
               priority
             />
-          </Link>
+          </button>
 
           {/* Nav Desktop */}
           <nav className="hidden lg:flex space-x-8 text-[11px] font-bold tracking-[2px] text-gray-300 uppercase">
-            <Link href="#ia" className="hover:text-white transition-colors">
-              Tecnologia
-            </Link>
-            <Link href="#pratica" className="hover:text-white transition-colors">
-              Resultados
-            </Link>
-            <Link href="#metodo" className="hover:text-white transition-colors">
-              Método
-            </Link>
-            <Link href="#depoimentos" className="hover:text-white transition-colors">
-              Depoimentos
-            </Link>
-            <Link href="#faq" className="hover:text-white transition-colors">
-              Dúvidas
-            </Link>
+            {menuItems.map((item) => (
+              <button
+                key={item.section}
+                onClick={() => scrollToSection(item.section)}
+                className="hover:text-white transition-colors cursor-pointer"
+              >
+                {item.label}
+              </button>
+            ))}
           </nav>
 
           {/* CTA + Hamburger */}
@@ -119,41 +135,15 @@ export default function Header() {
           &times;
         </button>
         <div className="flex flex-col gap-8 mt-12 text-center">
-          <Link
-            href="#ia"
-            onClick={() => setIsMenuOpen(false)}
-            className="text-white text-2xl font-bold uppercase tracking-widest"
-          >
-            Tecnologia
-          </Link>
-          <Link
-            href="#pratica"
-            onClick={() => setIsMenuOpen(false)}
-            className="text-white text-2xl font-bold uppercase tracking-widest"
-          >
-            Resultados
-          </Link>
-          <Link
-            href="#metodo"
-            onClick={() => setIsMenuOpen(false)}
-            className="text-white text-2xl font-bold uppercase tracking-widest"
-          >
-            Método
-          </Link>
-          <Link
-            href="#depoimentos"
-            onClick={() => setIsMenuOpen(false)}
-            className="text-white text-2xl font-bold uppercase tracking-widest"
-          >
-            Depoimentos
-          </Link>
-          <Link
-            href="#faq"
-            onClick={() => setIsMenuOpen(false)}
-            className="text-white text-2xl font-bold uppercase tracking-widest"
-          >
-            Dúvidas
-          </Link>
+          {menuItems.map((item) => (
+            <button
+              key={item.section}
+              onClick={() => scrollToSection(item.section)}
+              className="text-white text-2xl font-bold uppercase tracking-widest hover:text-[#bf953f] transition-colors"
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
       </div>
 
