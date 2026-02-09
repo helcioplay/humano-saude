@@ -391,7 +391,7 @@ export default function DockSidebar() {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.2 }}
               >
-                <Logo variant="1" size="md" className="max-w-[200px]" />
+                <Logo variant="2" size="md" className="max-w-[200px]" />
               </motion.div>
             ) : (
               <motion.div
@@ -401,7 +401,7 @@ export default function DockSidebar() {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.2 }}
               >
-                <LogoIcon variant="1" size="md" />
+                <LogoIcon variant="2" size="md" />
               </motion.div>
             )}
           </AnimatePresence>
@@ -594,7 +594,7 @@ export default function DockSidebar() {
             >
               {/* Header - Logo Oficial Mobile */}
               <div className="h-16 flex items-center justify-between px-4 border-b border-white/10">
-                <Logo variant="1" size="md" className="max-w-[160px]" />
+                <Logo variant="2" size="md" className="max-w-[160px]" />
 
                 <button
                   onClick={() => setIsMobileOpen(false)}
