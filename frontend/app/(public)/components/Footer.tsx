@@ -124,9 +124,9 @@ export default function Footer() {
               © {new Date().getFullYear()} Humano Saúde. Todos os direitos reservados.
             </p>
             <div className="flex flex-col md:flex-row items-center gap-4">
-              <p>CNPJ: 00.000.000/0001-00</p>
+              <p>CNPJ: 50.216.907/0001-60</p>
               <span className="hidden md:inline">•</span>
-              <p>Registro SUSEP: 000000000</p>
+              <p>SUSEP: 251174847</p>
             </div>
           </div>
         </div>
