@@ -38,7 +38,6 @@ import {
   Ticket,
   CreditCard,
   FileText,
-  Heart,
   Eye,
   Palette,
   Zap,
@@ -183,15 +182,6 @@ const sidebarItems: SidebarItem[] = [
       { id: "gestao-cupons", label: "Cupons", icon: Ticket, href: `${P}/contratos` },
       { id: "gestao-pagamentos", label: "Pagamentos", icon: CreditCard, href: `${P}/financeiro` },
       { id: "gestao-relatorios", label: "Relatórios", icon: BarChart3, href: `${P}/relatorios` },
-    ],
-  },
-  {
-    id: "lovable",
-    label: "Lovable",
-    icon: Heart,
-    children: [
-      { id: "lovable-chat", label: "Chat", icon: MessagesSquare, href: `${P}/chat` },
-      { id: "lovable-insights", label: "Insights IA", icon: Sparkles, href: `${P}/insights` },
     ],
   },
   {
@@ -457,12 +447,12 @@ export default function DockSidebar() {
         <div className="h-16 flex items-center justify-center border-b border-white/10 px-4 overflow-hidden">
           <AnimatePresence mode="wait">
             {isExpanded ? (
-              <motion.div key="full" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }} className="flex items-center justify-center h-12">
-                <Logo variant="2" size="sm" className="max-w-[160px] max-h-[40px]" />
+              <motion.div key="full" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }} className="flex items-center justify-center h-10 w-full">
+                <Logo variant="2" size="sm" className="max-w-[140px] max-h-[32px] [&_img]:max-h-[32px] [&_img]:w-auto" />
               </motion.div>
             ) : (
-              <motion.div key="icon" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }} className="flex items-center justify-center h-10 w-10">
-                <LogoIcon variant="2" size="sm" />
+              <motion.div key="icon" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.2 }} className="flex items-center justify-center h-8 w-8">
+                <LogoIcon variant="2" size="sm" className="max-h-[28px] max-w-[28px] [&_img]:max-h-[28px] [&_img]:w-auto" />
               </motion.div>
             )}
           </AnimatePresence>

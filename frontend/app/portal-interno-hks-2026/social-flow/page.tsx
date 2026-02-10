@@ -72,7 +72,7 @@ export default function SocialFlowDashboard() {
       <div className="flex items-center justify-between border-b border-white/10 pb-6">
         <div>
           <h1 className="text-3xl font-bold text-white flex items-center gap-3">
-            <Send className="h-8 w-8 text-purple-400" />
+            <Send className="h-8 w-8 text-[#D4AF37]" />
             Social Flow
           </h1>
           <p className="mt-1 text-gray-400">Gerencie suas redes sociais com IA</p>
@@ -93,8 +93,8 @@ export default function SocialFlowDashboard() {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {[
           { label: "Seguidores Totais", value: stats.totalFollowers.toLocaleString("pt-BR"), icon: Users, color: "text-blue-400", border: "border-blue-500/20" },
-          { label: "Posts Agendados", value: stats.scheduledCount, icon: Calendar, color: "text-purple-400", border: "border-purple-500/20" },
-          { label: "Rascunhos", value: stats.draftsCount, icon: FileText, color: "text-yellow-400", border: "border-yellow-500/20" },
+          { label: "Posts Agendados", value: stats.scheduledCount, icon: Calendar, color: "text-[#D4AF37]", border: "border-[#D4AF37]/20" },
+          { label: "Rascunhos", value: stats.draftsCount, icon: FileText, color: "text-[#F4D03F]", border: "border-[#F4D03F]/20" },
           { label: "Melhor Horário", value: stats.bestTime ? `${DAYS[stats.bestTime.day]} ${stats.bestTime.hour}h` : "—", icon: Clock, color: "text-green-400", border: "border-green-500/20" },
         ].map((s, i) => (
           <div key={i} className={`rounded-xl border ${s.border} bg-[#0a0a0a] p-5`}>
@@ -155,10 +155,10 @@ export default function SocialFlowDashboard() {
           {/* Ações rápidas */}
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {[
-              { label: "Criar Post com IA", icon: Sparkles, href: `${P}/composer`, color: "from-purple-500 to-pink-500" },
-              { label: "Calendário", icon: Calendar, href: `${P}/calendar`, color: "from-blue-500 to-cyan-500" },
-              { label: "Biblioteca de Mídia", icon: Image, href: `${P}/library`, color: "from-orange-500 to-yellow-500" },
-              { label: "Analytics", icon: BarChart3, href: `${P}/analytics`, color: "from-green-500 to-emerald-500" },
+              { label: "Criar Post com IA", icon: Sparkles, href: `${P}/composer`, color: "from-[#D4AF37] to-[#F4D03F]" },
+              { label: "Calendário", icon: Calendar, href: `${P}/calendar`, color: "from-slate-600 to-slate-500" },
+              { label: "Biblioteca de Mídia", icon: Image, href: `${P}/library`, color: "from-[#D4AF37]/80 to-[#F4D03F]/80" },
+              { label: "Analytics", icon: BarChart3, href: `${P}/analytics`, color: "from-emerald-600 to-emerald-500" },
             ].map((action, i) => (
               <Link key={i} href={action.href}>
                 <div className="rounded-xl border border-white/10 bg-[#0a0a0a] p-6 hover:bg-white/5 transition-all group cursor-pointer">
@@ -175,14 +175,14 @@ export default function SocialFlowDashboard() {
       ) : (
         /* Empty State */
         <div className="rounded-xl border border-white/10 bg-[#0a0a0a] p-12 text-center">
-          <Send className="h-16 w-16 text-purple-400/30 mx-auto mb-4" />
+          <Send className="h-16 w-16 text-[#D4AF37]/30 mx-auto mb-4" />
           <h2 className="text-xl font-bold text-white mb-2">Conecte suas redes sociais</h2>
           <p className="text-gray-400 mb-6 max-w-md mx-auto">
             Gerencie Instagram, Facebook e mais de um só lugar. Agende posts, gere legendas com IA e acompanhe métricas.
           </p>
           <Link href={`${P}/connect`}>
-            <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:opacity-90 transition-opacity">
-              <Plus className="h-4 w-4 inline mr-2" /> Conectar Instagram
+            <button className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#D4AF37] to-[#F4D03F] text-slate-900 font-bold hover:shadow-lg hover:shadow-[#D4AF37]/20 transition-all">
+              <Plus className="h-4 w-4 inline mr-2" /> Conectar Conta
             </button>
           </Link>
 
@@ -193,7 +193,7 @@ export default function SocialFlowDashboard() {
               { icon: TrendingUp, label: "Analytics", desc: "Métricas e insights em tempo real" },
             ].map((f, i) => (
               <div key={i} className="rounded-lg border border-white/5 bg-white/5 p-4 text-left">
-                <f.icon className="h-5 w-5 text-purple-400 mb-2" />
+                <f.icon className="h-5 w-5 text-[#D4AF37] mb-2" />
                 <p className="text-sm font-medium text-white">{f.label}</p>
                 <p className="text-xs text-gray-500 mt-1">{f.desc}</p>
               </div>
@@ -203,17 +203,17 @@ export default function SocialFlowDashboard() {
       )}
 
       {/* Social Flow Pro upsell */}
-      <div className="rounded-xl border border-purple-500/20 bg-gradient-to-r from-purple-500/5 to-pink-500/5 p-6">
+      <div className="rounded-xl border border-[#D4AF37]/20 bg-gradient-to-r from-[#D4AF37]/5 to-[#F4D03F]/5 p-6">
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-              <Hash className="h-5 w-5 text-purple-400" /> Social Flow Pro
+              <Hash className="h-5 w-5 text-[#D4AF37]" /> Social Flow Pro
             </h3>
             <p className="text-sm text-gray-400 mt-1">
               Em breve: Facebook, X (Twitter), LinkedIn, YouTube, TikTok e Pinterest
             </p>
           </div>
-          <span className="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold">EM BREVE</span>
+          <span className="px-3 py-1 rounded-full bg-[#D4AF37]/20 text-[#D4AF37] text-xs font-bold">EM BREVE</span>
         </div>
       </div>
     </div>
