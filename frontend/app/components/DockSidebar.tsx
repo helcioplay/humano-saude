@@ -381,7 +381,7 @@ export default function DockSidebar() {
         className="hidden lg:flex fixed left-0 top-0 h-screen bg-[#050505]/95 backdrop-blur-xl border-r border-white/10 flex-col z-50"
       >
         {/* HEADER - Logo Oficial Humano Saúde */}
-        <div className="h-16 flex items-center justify-center border-b border-white/10 px-4">
+        <div className="h-16 flex items-center justify-center border-b border-white/10 px-4 overflow-hidden">
           <AnimatePresence mode="wait">
             {isExpanded ? (
               <motion.div
@@ -390,8 +390,9 @@ export default function DockSidebar() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.2 }}
+                className="flex items-center justify-center h-12"
               >
-                <Logo variant="2" size="md" className="max-w-[200px]" />
+                <Logo variant="2" size="sm" className="max-w-[160px] max-h-[40px]" />
               </motion.div>
             ) : (
               <motion.div
@@ -400,15 +401,16 @@ export default function DockSidebar() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.2 }}
+                className="flex items-center justify-center h-10 w-10"
               >
-                <LogoIcon variant="2" size="md" />
+                <LogoIcon variant="2" size="sm" />
               </motion.div>
             )}
           </AnimatePresence>
         </div>
 
         {/* MENU - Scroll Area */}
-        <div className="flex-1 overflow-y-auto overflow-x-hidden py-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden py-4 sidebar-scroll">
           <nav className="space-y-6">
             {menuGroups.map((group) => (
               <div key={group.id}>
@@ -593,8 +595,8 @@ export default function DockSidebar() {
               className="lg:hidden fixed left-0 top-0 h-screen w-72 bg-[#050505]/98 backdrop-blur-xl border-r border-white/10 flex flex-col z-50"
             >
               {/* Header - Logo Oficial Mobile */}
-              <div className="h-16 flex items-center justify-between px-4 border-b border-white/10">
-                <Logo variant="2" size="md" className="max-w-[160px]" />
+              <div className="h-16 flex items-center justify-between px-4 border-b border-white/10 overflow-hidden">
+                <Logo variant="2" size="sm" className="max-w-[140px] max-h-[36px]" />
 
                 <button
                   onClick={() => setIsMobileOpen(false)}
@@ -605,7 +607,7 @@ export default function DockSidebar() {
               </div>
 
               {/* Menu */}
-              <div className="flex-1 overflow-y-auto py-4">
+              <div className="flex-1 overflow-y-auto py-4 sidebar-scroll">
                 <nav className="space-y-6">
                   {menuGroups.map((group) => (
                     <div key={group.id}>
