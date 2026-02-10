@@ -38,7 +38,7 @@ export default function NotFound() {
           </Link>
 
           <a
-            href="https://wa.me/5521999999999"
+            href="https://wa.me/5521988179407"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 bg-slate-800 text-white font-bold rounded-lg border border-slate-700 hover:bg-slate-700 transition-all duration-300"

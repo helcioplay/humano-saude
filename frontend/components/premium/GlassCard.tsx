@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useState } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 interface GlassCardProps {
@@ -18,11 +18,14 @@ export function GlassCard({
 }: GlassCardProps) {
   const [isBeamActive, setIsBeamActive] = useState(false);
 
-  // Ativar Border Beam quando lead é captado
-  if (onLeadCaptured && !isBeamActive) {
-    setIsBeamActive(true);
-    setTimeout(() => setIsBeamActive(false), 3000); // Duração da animação
-  }
+  // Ativar Border Beam quando lead é captado (via useEffect, não no render)
+  useEffect(() => {
+    if (onLeadCaptured && !isBeamActive) {
+      setIsBeamActive(true);
+      const timer = setTimeout(() => setIsBeamActive(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [onLeadCaptured]);
 
   return (
     <motion.div

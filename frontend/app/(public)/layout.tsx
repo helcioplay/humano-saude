@@ -1,10 +1,5 @@
 import { Cinzel, Montserrat } from 'next/font/google';
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
-import '../globals.css';
-import GoogleAnalytics from '../components/GoogleAnalytics';
-import GoogleTagManager, { GoogleTagManagerNoScript } from '../components/GoogleTagManager';
-import MetaPixel from '../components/MetaPixel';
 
 const cinzel = Cinzel({
   subsets: ['latin'],
@@ -83,18 +78,8 @@ export default function PublicLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${cinzel.variable} ${montserrat.variable}`}>
-      <head>
-        <GoogleTagManager />
-      </head>
-      <body className="font-montserrat antialiased">
-        <GoogleTagManagerNoScript />
-        <GoogleAnalytics />
-        <Suspense fallback={null}>
-          <MetaPixel />
-        </Suspense>
-        {children}
-      </body>
-    </html>
+    <div className={`${cinzel.variable} ${montserrat.variable} font-montserrat`}>
+      {children}
+    </div>
   );
 }

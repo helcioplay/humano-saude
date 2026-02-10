@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Column 1: Logo + Description */}
           <div>
             <Image
-              src="https://humanosaude.com.br/wp-content/uploads/2024/01/logo-humano-saude-dourado.png"
+              src="/images/logos/LOGO 1 SEM FUNDO.png"
               alt="Humano Saúde"
               width={180}
               height={60}
